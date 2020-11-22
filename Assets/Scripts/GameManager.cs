@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject startPage, gameOverPage, countDownPage;
     public Text scoreText;
+
+        public AudioSource bgSound; 
+
     public enum PageState {
         None,
         Start,
@@ -72,7 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame() {
         SetPageState(PageState.CountDown);
-
+        bgSound.Play();
     }
 
     void OnEnable() {
@@ -94,14 +97,17 @@ public class GameManager : MonoBehaviour
 
     void OnPlayerDied() {
         gameOver = true;
+        bgSound.Stop();
+
         int savedScore = PlayerPrefs.GetInt("FlappyHiScore");
         if (score > savedScore) {
             PlayerPrefs.SetInt("FlappyHiScore", score);
         }
+
         SetPageState(PageState.GameOver);
     }
     void OnPlayerScored() {
         score++;
-        scoreText.text = "HighScore: " + score.ToString();
+        scoreText.text = score.ToString();
     }
 }
