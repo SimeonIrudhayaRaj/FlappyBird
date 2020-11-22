@@ -13,14 +13,18 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public GameObject startPage, gameOverPage, countDownPage;
     public Text scoreText;
-    enum PageState {
+    public enum PageState {
         None,
         Start,
         GameOver,
         CountDown
     }
     int score = 0;
-    public bool gameOver = true;
+    bool gameOver = true;
+
+    public bool isGameOver() {
+        return gameOver;
+    }
     void Awake()
     {
         instance = this;
@@ -98,6 +102,6 @@ public class GameManager : MonoBehaviour
     }
     void OnPlayerScored() {
         score++;
-        scoreText.text = score.ToString();
+        scoreText.text = "HighScore: " + score.ToString();
     }
 }

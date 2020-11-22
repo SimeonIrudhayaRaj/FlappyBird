@@ -68,7 +68,10 @@ public class Parallaxer : MonoBehaviour
     }
 
     void Update() {
-        if (game.gameOver) return;
+        if (game.isGameOver()) {
+            return;
+        }
+
         Shift();
         spawnTimer += Time.deltaTime;
         if (spawnTimer > spawnRate) {
@@ -95,10 +98,12 @@ public class Parallaxer : MonoBehaviour
     }
 
     void SpawnImmediate() {
-    Transform t = GetPoolObject();
-        if (t == null ) return;
+        Transform t = GetPoolObject();
+        if (t == null ) {
+            return;
+        }
         float y = Random.Range(ySpawnRange.min, ySpawnRange.max);
-        t.position = new Vector3( immediateSpawnPos.x, y, 0);
+        float x =(immediateSpawnPos.x * Camera.main.aspect)/ targetAspect;
         Spawn();
     }
 
@@ -107,8 +112,9 @@ public class Parallaxer : MonoBehaviour
         if (t == null ) {
             return;
         }
+        float x =(defaultSpawnPos.x * Camera.main.aspect)/ targetAspect;
         float y = Random.Range(ySpawnRange.min, ySpawnRange.max);
-        t.position = new Vector3( defaultSpawnPos.x, y, 0);    
+        t.position = new Vector3( x, y, 0);    
     }
 
     void Shift() {
@@ -118,7 +124,7 @@ public class Parallaxer : MonoBehaviour
         }
     }
     void CheckDisposeObject(PoolObject poolObject) {
-        if (poolObject.transform.position.x < -defaultSpawnPos.x) {
+        if (poolObject.transform.position.x < (-defaultSpawnPos.x * Camera.main.aspect)/ targetAspect) {
             poolObject.dispose();
             poolObject.transform.position = Vector3.one * 1000;
         }
@@ -128,7 +134,6 @@ public class Parallaxer : MonoBehaviour
         for(int i = 0; i< poolObjects.Length; i++) {
             if(!poolObjects[i].inUse) {
                 poolObjects[i].use();
-                 Debug.Log("use: " + i);
                 return poolObjects[i].transform;
             }
         }

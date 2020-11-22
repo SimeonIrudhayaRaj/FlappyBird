@@ -11,7 +11,7 @@ public class HighScore : MonoBehaviour
     void OnEnable()
     {
         highScore = GetComponent<Text>();
-        highScore.text = PlayerPrefs.GetInt("FlappyHiScore").ToString(); 
+        highScore.text = "HighScore: " + PlayerPrefs.GetInt("FlappyHiScore").ToString(); 
     }
 
     // Update is called once per frame
