@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1772442260070572172}
   - component: {fileID: 1772442260070572174}
   - component: {fileID: 1772442260070572173}
-  - component: {fileID: 5613659047385476636}
   m_Layer: 0
   m_Name: PipeTop
   m_TagString: scoreZone
@@ -90,7 +89,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772442260070572171}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -109,42 +108,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1495407, y: 20.690073}
   m_EdgeRadius: 0
---- !u!60 &5613659047385476636
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772442260070572171}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.3500001, y: 20.790304}
-    newSize: {x: 3.35, y: 11.93}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -1.6546971, y: 10.364697}
-      - {x: -1.6546972, y: 10.364697}
-      - {x: -1.7072978, y: 8.977976}
-      - {x: -1.2652811, y: 9.134932}
-      - {x: -1.1996793, y: 1.4110607}
-      - {x: -1.2080303, y: -10.395152}
-      - {x: 1.0760607, y: -10.395152}
-      - {x: 1.0728785, y: 6.9031897}
-      - {x: 1.0838418, y: 9.11437}
-      - {x: 1.4594542, y: 9.134977}
-      - {x: 1.5125759, y: 10.364697}
 --- !u!1 &1772442260100659188
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,7 +119,6 @@ GameObject:
   - component: {fileID: 1772442260100659189}
   - component: {fileID: 1772442260100659191}
   - component: {fileID: 1772442260100659190}
-  - component: {fileID: 2845036962167155570}
   m_Layer: 0
   m_Name: PipeBottom
   m_TagString: deadZone
@@ -235,7 +197,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772442260100659188}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -252,44 +214,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.185258, y: 20.73539}
+  m_Size: {x: 3.1, y: 20.73539}
   m_EdgeRadius: 0
---- !u!60 &2845036962167155570
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1772442260100659188}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.3500001, y: 20.790304}
-    newSize: {x: 3.35, y: 11.93}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -1.6546971, y: 10.364697}
-      - {x: -1.654697, y: 9.127256}
-      - {x: -1.2100728, y: 9.1274395}
-      - {x: -1.2644624, y: 1.5567244}
-      - {x: -1.2594082, y: 1.3055382}
-      - {x: -1.2953124, y: 1.0516753}
-      - {x: -1.2057604, y: 0.872025}
-      - {x: -1.2080303, y: -10.395152}
-      - {x: 1.0760607, y: -10.395152}
-      - {x: 1.5125759, y: 8.71}
-      - {x: 1.5125759, y: 10.364697}
 --- !u!1 &1772442260117389344
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,7 +293,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.38585806, y: 0.39963913}
+  m_Offset: {x: 0.7173915, y: 0.39963913}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -378,5 +304,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.22828388, y: 1.7992783}
+  m_Size: {x: 0.01, y: 1.7992783}
   m_EdgeRadius: 0
