@@ -93,6 +93,7 @@ public class Parallaxer : MonoBehaviour
             poolObjects[i] = new PoolObject(t);
         }
         if (spawnImmediate) {
+            Debug.Log("spawnImmediate");
             SpawnImmediate();
         }
     }
@@ -104,6 +105,7 @@ public class Parallaxer : MonoBehaviour
         }
         float y = Random.Range(ySpawnRange.min, ySpawnRange.max);
         float x =(immediateSpawnPos.x * Camera.main.aspect)/ targetAspect;
+        t.position = new Vector3( x, y, 0);    
         Spawn();
     }
 

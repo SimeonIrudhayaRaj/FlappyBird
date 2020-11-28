@@ -56,6 +56,7 @@ public class TapController : MonoBehaviour
             return;
         }
         if (Input.GetMouseButtonDown(0)) {
+            // Time.timeScale += 1;
             tap.Play();
             rigidbody.velocity = Vector3.zero;
             transform.rotation = forwardRotation;
