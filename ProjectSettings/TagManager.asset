@@ -6,6 +6,11 @@ TagManager:
   tags:
   - scoreZone
   - deadZone
+  - redBar
+  - blueBar
+  - greenBar
+  - yellowBar
+  - magentaBar
   layers:
   - Default
   - TransparentFX

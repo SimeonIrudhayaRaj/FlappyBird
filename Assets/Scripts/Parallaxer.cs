@@ -40,7 +40,6 @@ public class Parallaxer : MonoBehaviour
     GameManager game;
 
     void Awake() {
-                print("transform: waw");
         Configure();
     }
 
@@ -93,7 +92,6 @@ public class Parallaxer : MonoBehaviour
             poolObjects[i] = new PoolObject(t);
         }
         if (spawnImmediate) {
-            Debug.Log("spawnImmediate");
             SpawnImmediate();
         }
     }

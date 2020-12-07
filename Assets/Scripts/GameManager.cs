@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -71,6 +72,7 @@ public class GameManager : MonoBehaviour
         OnGameOverConfirmed();
         scoreText.text = "0";
         SetPageState(PageState.Start);
+        SceneManager.LoadScene("color");
     }
 
     public void StartGame() {
@@ -82,11 +84,15 @@ public class GameManager : MonoBehaviour
         CountDown.OnCountDownFinished += OnCountDownFinished;
         TapController.OnPlayerDied += OnPlayerDied;
         TapController.OnPlayerScored += OnPlayerScored;
+        BallController.OnPlayerDied += OnPlayerDied;
+        BallController.OnPlayerScored += OnPlayerScored;
     }
     void OnDisable() {
         CountDown.OnCountDownFinished -= OnCountDownFinished;
         TapController.OnPlayerDied -= OnPlayerDied;
         TapController.OnPlayerScored -= OnPlayerScored;
+        BallController.OnPlayerDied -= OnPlayerDied;
+        BallController.OnPlayerScored -= OnPlayerScored;
     }
     void OnCountDownFinished() {
         gameOver = false;
@@ -99,9 +105,9 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         bgSound.Stop();
 
-        int savedScore = PlayerPrefs.GetInt("FlappyHiScore");
+        int savedScore = PlayerPrefs.GetInt("ColorHiScore");
         if (score > savedScore) {
-            PlayerPrefs.SetInt("FlappyHiScore", score);
+            PlayerPrefs.SetInt("ColorHiScore", score);
         }
 
         SetPageState(PageState.GameOver);
